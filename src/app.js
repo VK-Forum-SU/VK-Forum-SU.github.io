@@ -9,4 +9,3 @@ function homeView() {
   render(html`<h1>Heloo!</h1>`, document.body);
 }
 
-
