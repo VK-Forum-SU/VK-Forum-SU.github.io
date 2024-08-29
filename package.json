@@ -1,0 +1,12 @@
+{
+  "name": "vk-forum-su.github.io",
+  "version": "1.0.0",
+  "description": "Simple page application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "VD",
+  "license": "ISC"
+}
