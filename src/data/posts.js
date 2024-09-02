@@ -1,8 +1,9 @@
-import { get, post } from "./api.js";
+import { get, post, put } from "./api.js";
 
 const endepoints = {
   recentPost: "/classes/Post",
-  postById: (postId) => `/classes/Post/${postId}?include=author`,
+  postDetails: (postId) => `/classes/Post/${postId}?include=author`,
+  postById: `/classes/Post/`,
   posts: "/classes/Post"
 };
 
@@ -11,7 +12,7 @@ export function getRecentPosts() {
 }
 
 export async function getPostById(id) {
-  return get(endepoints.postById(id));
+  return get(endepoints.postDetails(id));
 }
 
 export async function createPost(postData, authorId) {
@@ -21,5 +22,14 @@ export async function createPost(postData, authorId) {
     author: { __type: "Pointer", className: "_User", objectId: authorId }
   };
 
-  return post(endepoints.posts, record)
+  return post(endepoints.posts, record);
+}
+
+export async function updatePost(id, postData, authorId) {
+  const record = {
+    title: postData.title,
+    content: postData.content,
+    author: { __type: "Pointer", className: "_User", objectId: authorId }
+  };
+  return put(endepoints.postById + id, record);
 }

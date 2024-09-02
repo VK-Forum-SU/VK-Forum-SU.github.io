@@ -10,6 +10,7 @@ import { logoutAction } from "./views/logout.js";
 import { postView } from "./views/posts.js";
 import { postDetaildView } from "./views/postDetails.js";
 import { createView } from "./views/createPost.js";
+import { editView } from "./views/editPost.js";
 
 const root = document.querySelector("main");
 const nav = document.querySelector("nav");
@@ -31,5 +32,6 @@ page("/logout", logoutAction);
 page("/posts", postView);
 page("/details/:id", postDetaildView);
 page("/create", createView);
+page('/edit/:id', editView)
 
 page.start();

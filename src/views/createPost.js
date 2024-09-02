@@ -18,8 +18,8 @@ export function createView(ctx) {
     if (!title || !content) {
       return alert("All fields are required!");
     }
-    const result = await createPost({ title, content }, ctx.user?.objectId);
+    await createPost({ title, content }, ctx.user?.objectId);
 
-    ctx.page.redirect("/posts/");
+    ctx.page.redirect("/posts");
   }
 }

@@ -1,9 +1,10 @@
 import { html } from "@lit-html";
 
-export const navTemp = (hasUser) => html`
+export const navTemp = (username, isAdmin) => html`
   <a href="/">Home</a>
   <a href="/posts">Posts</a>
-  ${!hasUser ? guestNav() : userNav()}
+
+  ${!username ? guestNav() : userNav(username)}
 `;
 
 const guestNav = () => html`
@@ -11,7 +12,8 @@ const guestNav = () => html`
   <a href="/register">Register</a>
 `;
 
-const userNav = () => html`
-
+const userNav = (username) => html`
+  <span class="greeting">Welcome, <strong style="text-transform:capitalize">${username}</strong> </span> &nbsp;
   <a href="/logout">Logout</a>
+  <hr />
 `;

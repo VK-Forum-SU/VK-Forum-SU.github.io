@@ -2,9 +2,9 @@ import { render } from "@lit-html";
 
 export function addNavigation(navRoot, navTemp) {
   return function (ctx, next) {
-    const hasUser = Boolean(ctx.user);
+    const username = ctx.user?.username;
 
-    render(navTemp(hasUser), navRoot);
+    render(navTemp(username), navRoot);
     next();
   };
 }
