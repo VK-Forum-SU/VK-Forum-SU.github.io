@@ -1,11 +1,9 @@
-
-
 export function setUserData(userData) {
-  localStorage.setItem('userData', JSON.stringify(userData));
+  localStorage.setItem("userData", JSON.stringify(userData));
 }
 
 export function getUserData() {
-  return JSON.parse(localStorage.getItem('userData'))
+  return JSON.parse(localStorage.getItem("userData"));
 }
 
 export function clearUserData() {
@@ -20,6 +18,6 @@ export function submitHandler(callback) {
 
     const data = Object.fromEntries(formData.entries());
 
-    callback(data, event.target)
-  }
+    callback(data, event.target);
+  };
 }

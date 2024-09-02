@@ -1,8 +1,8 @@
 import { html } from "@lit-html";
 
 export const navTemp = (hasUser) => html`
-<a href="/">Home</a>
-<a href="/posts">Posts</a>
+  <a href="/">Home</a>
+  <a href="/posts">Posts</a>
   ${!hasUser ? guestNav() : userNav()}
 `;
 
@@ -12,8 +12,6 @@ const guestNav = () => html`
 `;
 
 const userNav = () => html`
-  <a href="/posts">Posts</a>
 
   <a href="/logout">Logout</a>
 `;
-

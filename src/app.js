@@ -7,6 +7,9 @@ import { navTemp } from "./views/nav.js";
 import { loginView } from "./views/login.js";
 import { registerView } from "./views/register.js";
 import { logoutAction } from "./views/logout.js";
+import { postView } from "./views/posts.js";
+import { postDetaildView } from "./views/postDetails.js";
+import { createView } from "./views/createPost.js";
 
 const root = document.querySelector("main");
 const nav = document.querySelector("nav");
@@ -25,5 +28,8 @@ page("/", homeView);
 page("/login", loginView);
 page("/register", registerView);
 page("/logout", logoutAction);
+page("/posts", postView);
+page("/details/:id", postDetaildView);
+page("/create", createView);
 
 page.start();

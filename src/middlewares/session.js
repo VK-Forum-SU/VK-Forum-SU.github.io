@@ -1,10 +1,10 @@
-import { getUserData } from "../util.js"
+import { getUserData } from "../util.js";
 
 export function addSessin() {
   return function (ctx, next) {
     const user = getUserData();
 
-    ctx.user = user
-    next()
-  }
+    ctx.user = user;
+    next();
+  };
 }

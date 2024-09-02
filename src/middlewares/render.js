@@ -5,9 +5,9 @@ export function addRender(root) {
     ctx.render = render;
 
     next();
-  }
+  };
 
   function render(templateResult) {
-    baseRender(templateResult, root)
+    baseRender(templateResult, root);
   }
 }
